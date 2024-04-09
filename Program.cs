@@ -1,9 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-class Program
-{
-    static void Main(string[] args)
-    {
+﻿
+class Program {
+    static void Main(string[] args) {
         // concert list created to be viewed and selected below. it is a list of objects from the concertticket class and it is called concerts
         List<ConcertTicket> concerts = new List<ConcertTicket>
         {
@@ -13,13 +10,11 @@ class Program
         };
 
 
-// loop to allow user to select a venue and book tickets
-        while (true)
-        {
+        // loop to allow user to select a venue and book tickets
+        while (true) {
             // display list of available venues as well as a way to exit the program
             Console.WriteLine("Available Concert Venues:");
-            for (int i = 0; i < concerts.Count; i++)
-            {
+            for (int i = 0; i < concerts.Count; i++) {
                 Console.WriteLine($"{i + 1}. {concerts[i].Venue} on {concerts[i].Date.ToShortDateString()} - Ticket Price: €{concerts[i].TicketPrice} - Tickets available: {concerts[i].Capacity - concerts[i].TicketsSold}");
             }
             Console.WriteLine($"{concerts.Count + 1}. Exit");
@@ -29,12 +24,9 @@ class Program
             // get user input to store in venueChoice, I added a little bit of catch here in case the user enters an invalid input but will have to add more above
             int venueChoice = ConcertTicket.ConvertStringToInt(Console.ReadLine()) - 1; // here is the first type conversion to string to int
 
-            if (venueChoice == concerts.Count)
-            {
+            if (venueChoice == concerts.Count) {
                 return; // Exit the program
-            }
-            else if (venueChoice < 0 || venueChoice >= concerts.Count)
-            {
+            } else if (venueChoice < 0 || venueChoice >= concerts.Count) {
                 Console.WriteLine("Invalid selection, please try again.");
                 continue;
             }
@@ -42,33 +34,45 @@ class Program
             ConcertTicket selectedConcert = concerts[venueChoice];
 
             Console.WriteLine($"You selected: {selectedConcert.Venue} on {selectedConcert.Date.ToShortDateString()}");
-            Console.Write("Enter the number of tickets you would like to book: ");
+            Console.Write("Enter the number of tickets you would like to book: (Max 4 tickets): ");
             string input = Console.ReadLine();
             int quantity = ConcertTicket.ConvertStringToInt(input); // here is the second type conversion
 
             // checking for availability based on number of tickets and if it is available, it will book the tickets
-            if (selectedConcert.BookTickets(quantity))
-            {
-                Console.WriteLine("Yay! Booking successful.");
+            // checking for availability based on number of tickets and if it is available, it will book the tickets
+            if (quantity > 4) {
+                Console.WriteLine("Cannot book more than 4 tickets per transaction.");
+                continue;
             }
-            else
-            {
+
+            if (selectedConcert.Capacity - selectedConcert.TicketsSold < quantity) {
+                Console.WriteLine("Not enough tickets available.");
+                continue;
+            }
+
+            if (selectedConcert.Capacity - selectedConcert.TicketsSold <= selectedConcert.Capacity * 0.2) {
+                Console.WriteLine("Warning: Concert availability has dropped below 20%.");
+            }
+
+            if (selectedConcert.BookTickets(quantity)) {
+                Console.WriteLine("Yay! Booking successful.");
+                Console.WriteLine($"Your unique transaction ID is: {selectedConcert.Transactions.Last().Split(' ')[0]}");
+                Console.WriteLine($"Your tickets are: {string.Join(", ", Enumerable.Range(1, quantity).Select(i => $"Ticket {selectedConcert.TicketsSold - quantity + i}"))}");
+            } else {
                 Console.WriteLine("Not enough tickets available.");
             }
             // here is a way to see the transactions before being looped back to the start or exiting the program. I need to add some catch here in case the user enters an invalid input
             Console.WriteLine("Would you like to view the transactions? (yes/no): ");
             string viewTransactions = Console.ReadLine().Trim().ToLower();
-            if (viewTransactions == "yes")
-            {
+            if (viewTransactions == "yes") {
                 selectedConcert.PrintTransactions();
             }
-            if (viewTransactions == "no")
-            {
+            if (viewTransactions == "no") {
                 return;
             }
         }
     }
-}
+} 
 
 
 // below is a simple concert class with all the properties and methods
@@ -96,11 +100,12 @@ public class ConcertTicket
 
     public bool BookTickets(int quantity)
     {
-        if (TicketsSold + quantity >= Capacity)
+        if (TicketsSold + quantity >= Capacity || quantity > 4)
         {
             return false; // Booking fails if the capacity for the venue is reached or goes over
         }
         TicketsSold += quantity;
+        string transactionId = Guid.NewGuid().ToString().Substring(0, 8);
         Transactions.Add($"Sold {quantity} tickets for {Venue} on {Date.ToShortDateString()}.");
         return true;
     }
