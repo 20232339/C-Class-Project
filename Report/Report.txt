@@ -1,0 +1,13 @@
+Concert Ticket report:
+
+ConcertTicket Class: This class represents a single concert. It stores details like venue, date, capacity, and ticket price. It also keeps track of how many tickets have been sold and records each sale.
+
+Creating Concerts: In the Main method, I created a list named concerts and filled it with ConcertTicket objects for the 3 different venues and dates. Each object has its specific venue, date, capacity, and ticket price set up.
+
+Display Loop: The program enters a loop where it first displays all the concert options to the user. It adds an extra option at the end for exiting the application.
+
+Choosing a Venue: The user picks a concert by entering a number. This number corresponds to a concert in the list. If they choose the exit option, the program ends.
+
+Booking Tickets: After selecting a concert, the user is asked how many tickets they want to buy. The program checks if there are enough tickets left. If yes, it updates the tickets sold and adds a record of the transaction. If not, it tells the user there aren't enough tickets.
+
+Viewing Transactions: After trying to book tickets, the user can choose to see all sales for the chosen concert. This shows every time tickets were successfully booked for that concert.

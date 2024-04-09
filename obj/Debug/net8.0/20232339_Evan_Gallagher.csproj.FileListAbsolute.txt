@@ -1,0 +1,14 @@
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.AssemblyInfoInputs.cache
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.AssemblyInfo.cs
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.csproj.CoreCompileInputs.cache
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\bin\Debug\net8.0\20232339_Evan_Gallagher.exe
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\bin\Debug\net8.0\20232339_Evan_Gallagher.deps.json
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\bin\Debug\net8.0\20232339_Evan_Gallagher.runtimeconfig.json
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\bin\Debug\net8.0\20232339_Evan_Gallagher.dll
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\bin\Debug\net8.0\20232339_Evan_Gallagher.pdb
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.dll
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\refint\20232339_Evan_Gallagher.dll
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.pdb
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\20232339_Evan_Gallagher.genruntimeconfig.cache
+C:\Users\portl\Desktop\BFEI\C programs\20232339_Evan_Gallagher\obj\Debug\net8.0\ref\20232339_Evan_Gallagher.dll

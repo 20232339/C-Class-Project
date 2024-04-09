@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "20232339_Evan_Gallagher/1.0.0": {
+        "runtime": {
+          "20232339_Evan_Gallagher.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "20232339_Evan_Gallagher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
